@@ -1,0 +1,858 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación no oficial del API de Pokémon Showdown">
+      
+      
+        <meta name="author" content="Comunidad">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../js-library/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://pokemonshowdown.com/images/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>API - Pokémon Showdown API Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-web-de-pokemon-showdown" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pokémon Showdown API Docs" class="md-header__button md-logo" aria-label="Pokémon Showdown API Docs" data-md-component="logo">
+      
+  <img src="https://pokemonshowdown.com/images/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pokémon Showdown API Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pokémon Showdown API Docs" class="md-nav__button md-logo" aria-label="Pokémon Showdown API Docs" data-md-component="logo">
+      
+  <img src="https://pokemonshowdown.com/images/icon.png" alt="logo">
+
+    </a>
+    Pokémon Showdown API Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#como-empezar-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo empezar (Python)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo empezar (Python)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación de dependencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-obtener-datos-de-la-pokedex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Obtener datos de la Pokédex
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints Disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoints Disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repeticiones-replays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repeticiones (Replays)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repeticiones (Replays)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtener-una-repeticion-especifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtener una repetición específica:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtener-el-registro-de-entrada-de-una-repeticion-directamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtener el registro de entrada de una repetición directamente:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-de-repeticiones-replay-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Búsqueda de Repeticiones (Replay search)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usuarios-incluyendo-informacion-de-la-clasificacionladder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuarios (incluyendo información de la clasificación/ladder)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clasificaciones-ladders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clasificaciones (Ladders)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noticias-news" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Noticias (News)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursos-de-la-pokedex-dex-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos de la Pokédex (Dex resources)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../js-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#como-empezar-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo empezar (Python)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo empezar (Python)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación de dependencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-obtener-datos-de-la-pokedex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Obtener datos de la Pokédex
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints Disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoints Disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repeticiones-replays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repeticiones (Replays)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repeticiones (Replays)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obtener-una-repeticion-especifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtener una repetición específica:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtener-el-registro-de-entrada-de-una-repeticion-directamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtener el registro de entrada de una repetición directamente:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-de-repeticiones-replay-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Búsqueda de Repeticiones (Replay search)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usuarios-incluyendo-informacion-de-la-clasificacionladder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usuarios (incluyendo información de la clasificación/ladder)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clasificaciones-ladders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clasificaciones (Ladders)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noticias-news" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Noticias (News)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursos-de-la-pokedex-dex-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos de la Pokédex (Dex resources)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-web-de-pokemon-showdown">API Web de Pokémon Showdown</h1>
+<p>La mayoría de los APIs de Pokémon Showdown (PS) a los que querrías acceder programáticamente están disponibles añadiendo <code>.json</code> a la URL original.</p>
+<p>Todos cuentan con la cabecera <code>Access-Control-Allow-Origin: *</code>, por lo que puedes acceder a ellos directamente usando AJAX, <code>fetch</code>, o librerías HTTP como <code>requests</code> en Python.</p>
+<hr />
+<h2 id="como-empezar-python">Cómo empezar (Python)</h2>
+<p>Si eres un desarrollador junior o intermedio, interactuar con el API de Showdown es bastante sencillo. Todas las respuestas están en formato <strong>JSON</strong> (JavaScript Object Notation), que es un estándar común estructurado en forma de diccionarios y listas que facilita la lectura y manipulación de datos.</p>
+<p>En Python, la forma más fácil de conectarse es utilizando la librería <code>requests</code>.</p>
+<h3 id="instalacion-de-dependencias">Instalación de dependencias</h3>
+<p>Primero, asegúrate de tener instalada la librería en tu entorno, recomendamos usar <code>uv</code> para un manejo más rápido de dependencias:</p>
+<pre><code class="language-bash">uv pip install requests
+</code></pre>
+<h3 id="ejemplo-obtener-datos-de-la-pokedex">Ejemplo: Obtener datos de la Pokédex</h3>
+<p>A continuación, un ejemplo básico de cómo realizar una petición GET, leer la estructura JSON e imprimir la información.</p>
+<pre><code class="language-python">import requests
+
+# URL del recurso (Añadimos .json al final o usamos las rutas directas de datos)
+url = &quot;https://play.pokemonshowdown.com/data/pokedex.json&quot;
+
+# Realizar la petición GET
+response = requests.get(url)
+
+# Comprobar que la petición fue exitosa (Código HTTP 200 significa OK)
+if response.status_code == 200:
+    # Decodificar y convertir la respuesta JSON a un diccionario de Python
+    pokedex_data = response.json()
+
+    # pokedex_data ahora contiene toda la información de los Pokémon.
+    # Vamos a buscar la información de Pikachu (la clave suele estar en minúsculas y sin espacios)
+    pikachu_info = pokedex_data.get('pikachu')
+
+    if pikachu_info:
+        print(f&quot;Nombre: {pikachu_info['name']}&quot;)
+        print(f&quot;Tipos: {', '.join(pikachu_info['types'])}&quot;)
+        print(f&quot;Estadísticas Base: {pikachu_info['baseStats']}&quot;)
+else:
+    print(f&quot;Error al conectar con el API: Código de estado {response.status_code}&quot;)
+</code></pre>
+<hr />
+<h2 id="endpoints-disponibles">Endpoints Disponibles</h2>
+<p>A continuación se listan los principales recursos que puedes consultar. </p>
+<h3 id="repeticiones-replays">Repeticiones (Replays)</h3>
+<h4 id="obtener-una-repeticion-especifica">Obtener una repetición específica:</h4>
+<p>Puedes obtener los datos de una repetición añadiendo <code>.json</code> al final del enlace de la repetición. El archivo contendrá información detallada como los equipos y el registro de la batalla.</p>
+<ul>
+<li><strong>JSON:</strong> <code>https://replay.pokemonshowdown.com/gen8doublesubers-1097585496.json</code></li>
+<li><strong>Registro (Log):</strong> <code>https://replay.pokemonshowdown.com/gen8doublesubers-1097585496.log</code></li>
+</ul>
+<h4 id="obtener-el-registro-de-entrada-de-una-repeticion-directamente">Obtener el registro de entrada de una repetición directamente:</h4>
+<p><em>(Solo para formatos donde el equipo se genera automáticamente)</em></p>
+<ul>
+<li><strong>Input Log:</strong> <code>https://replay.pokemonshowdown.com/gen8randombattle-2005209836.inputlog</code></li>
+</ul>
+<blockquote>
+<p><strong>Nota:</strong> Los <code>logs</code> e <code>inputlogs</code> también están disponibles dentro de la respuesta JSON principal, por lo que las formas <code>.log</code> y <code>.inputlog</code> se proveen solo por conveniencia.</p>
+</blockquote>
+<hr />
+<h3 id="busqueda-de-repeticiones-replay-search">Búsqueda de Repeticiones (Replay search)</h3>
+<p>Puedes buscar repeticiones usando parámetros en la URL.</p>
+<ul>
+<li><strong>Listar repeticiones recientes:</strong>
+  <code>https://replay.pokemonshowdown.com/search.json</code></li>
+<li><strong>Buscar por usuario:</strong>
+  <code>https://replay.pokemonshowdown.com/search.json?user=zarel</code></li>
+<li><strong>Buscar por múltiples usuarios:</strong>
+  <code>https://replay.pokemonshowdown.com/search.json?user=zarel&amp;user2=yuyuko</code></li>
+<li><strong>Buscar por formato (tier):</strong>
+  <code>https://replay.pokemonshowdown.com/search.json?format=gen8ou</code></li>
+<li><strong>Búsqueda combinada:</strong>
+  <code>https://replay.pokemonshowdown.com/search.json?user=zarel&amp;user2=yuyuko&amp;format=gen7randombattle</code></li>
+<li><strong>Paginación de búsquedas:</strong>
+  <code>https://replay.pokemonshowdown.com/search.json?user=zarel&amp;before=1372221987</code></li>
+</ul>
+<blockquote>
+<p><strong>Paginación:</strong> Las búsquedas están limitadas a 51 resultados, y las páginas se desplazan de a 50 cada vez. Si existe un resultado 51 dentro de la estructura de respuesta, significa que hay al menos una página más disponible. Para el parámetro de tiempo (<code>before</code>), utiliza el <code>uploadtime</code> (tiempo de subida) de la última repetición en la lista.</p>
+<p>Tampoco recomendamos usar el parámetro opcional <code>page=[number]</code>, ya que es un API antiguo con poco soporte y no deberías depender de este.</p>
+</blockquote>
+<hr />
+<h3 id="usuarios-incluyendo-informacion-de-la-clasificacionladder">Usuarios (incluyendo información de la clasificación/ladder)</h3>
+<p>Puedes obtener la información del perfil público de un usuario y su posición (Elo) en las distintas categorías de clasificación (ladder).</p>
+<ul>
+<li><code>https://pokemonshowdown.com/users/zarel.json</code></li>
+</ul>
+<hr />
+<h3 id="clasificaciones-ladders">Clasificaciones (Ladders)</h3>
+<p>Obtén los top jugadores y su Elo respectivo de un formato en específico.</p>
+<ul>
+<li><code>https://pokemonshowdown.com/ladder/gen8ou.json</code></li>
+</ul>
+<hr />
+<h3 id="noticias-news">Noticias (News)</h3>
+<p>Puedes consultar en formato JSON las noticias recientes y anuncios importantes mostrados en la página principal.</p>
+<ul>
+<li>Todas las noticias recientes: <code>https://pokemonshowdown.com/news.json</code></li>
+<li>Una noticia específica (por ID de noticia): <code>https://pokemonshowdown.com/news/270.json</code></li>
+</ul>
+<hr />
+<h3 id="recursos-de-la-pokedex-dex-resources">Recursos de la Pokédex (Dex resources)</h3>
+<p>Directamente desde los repositorios de datos del simulador, estos endpoints son sumamente útiles para construir bots de Discord, herramientas de análisis u otras aplicaciones que requieran información estadística del juego.</p>
+<ul>
+<li><strong>Dicionario completo de la Pokédex:</strong> <code>https://play.pokemonshowdown.com/data/pokedex.json</code></li>
+<li><strong>Dicionario completo de Movimientos (Moves):</strong> <code>https://play.pokemonshowdown.com/data/moves.json</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

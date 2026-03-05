@@ -1,0 +1,28 @@
+site_name: Pokémon Showdown API Docs
+site_description: Documentación no oficial del API de Pokémon Showdown
+site_author: Comunidad
+theme:
+  name: material
+  palette:
+    primary: deep purple
+  logo: https://pokemonshowdown.com/images/icon.png
+  favicon: https://pokemonshowdown.com/images/icon.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+
+nav:
+  - Inicio: index.md
+  - API:
+      - Introducción: api/index.md
+      - Repeticiones: api/replays.md
+      - Búsqueda: api/search.md
+      - Usuarios: api/users.md
+      - Clasificación: api/ladder.md
+      - Noticias: api/news.md
+      - Pokédex: api/dex.md
+  - JS Library: js-library.md
+  - CLI: cli.md
